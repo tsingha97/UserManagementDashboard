@@ -11,17 +11,7 @@
 
 #Folder Structure:-
 
-├── public/
-├── src/
-│ ├── components/
-│ │ ├── UserList/
-│ │ │ ├── index.jsx # UserList component
-│ │ │ └── index.css # Styles for UserList component
-│ │ ├── UserForm/
-│ │ │ ├── index.jsx # UserForm component
-│ │ │ └── index.css # Styles for UserForm component
-│ ├── App.jsx # Main application component
-│ ├── App.css # Application-wide styles
-│ └── index.js # React entry point
-├── package.json # Project dependencies and scripts
-└── README.md # Project documentation
+Inside src floder I have on components folder where I stored all the components.
+There are two folder inside components 1.UserList , 2.UserForm.
+Both folder contain one index.jsx and index.css file where I wrote the corrosponding components code and styling.
+inside src floder have one App.jsx and App.css which contains main coding and styling of the application.
