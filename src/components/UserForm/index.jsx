@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import "./index.css";
 
 // Component to handle adding or editing a user
 const UserForm = ({ user, onCancel, onSubmit }) => {

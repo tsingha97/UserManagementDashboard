@@ -1,3 +1,5 @@
+import "./index.css";
+
 const UserList = ({ users, onEdit, onDelete }) => {
   return (
     <table className="user-table">

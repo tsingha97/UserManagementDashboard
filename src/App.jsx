@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import UserList from "./components/UserList";
 import UserForm from "./components/UserForm";
+import "./App.css";
 
 const App = () => {
   const [users, setUsers] = useState([]); // State to hold the user list
