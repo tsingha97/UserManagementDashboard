@@ -30,6 +30,22 @@ const App = () => {
     setFormVisible(true); // Show the form
   };
 
+  const handleEditUser = (user) => {
+    setSelectedUser(user); // Set the selected user
+    setFormVisible(true); // Show the form
+  };
+
+  const handleDeleteUser = async (id) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      try {
+        await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`); // Simulate API delete
+        setUsers(users.filter((user) => user.id !== id)); // Remove user from state
+      } catch (error) {
+        alert("Failed to delete user. Please try again."); // Show an error message if API call fails
+      }
+    }
+  };
+
   const handleFormSubmit = async (user) => {
     try {
       if (user.id) {
@@ -75,6 +91,8 @@ const App = () => {
           {/* Display the list of users */}
           <UserList
             users={users} // Pass the user list as a prop
+            onEdit={handleEditUser} // Handle edit action
+            onDelete={handleDeleteUser} // Handle delete action
           />
         </>
       )}

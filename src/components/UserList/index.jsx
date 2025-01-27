@@ -1,4 +1,4 @@
-const UserList = ({ users }) => {
+const UserList = ({ users, onEdit, onDelete }) => {
   return (
     <table className="user-table">
       {/* Table header */}
@@ -8,6 +8,7 @@ const UserList = ({ users }) => {
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,19 @@ const UserList = ({ users }) => {
 
             {/* Display user email */}
             <td>{user.email}</td>
+
+            {/* Action buttons for editing and deleting the user */}
+            <td>
+              {/* Edit button calls the onEdit callback with the current user */}
+              <button className="edit-btn" onClick={() => onEdit(user)}>
+                Edit
+              </button>
+
+              {/* Delete button calls the onDelete callback with the current user's ID */}
+              <button className="delete-btn" onClick={() => onDelete(user.id)}>
+                Delete
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
